@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>main</title>
+    <link rel="stylesheet" href="public/css/iconfont.css">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            margin: 0;
+        }
+        header {
+            height: 80px;
+            border-bottom: 1px solid rgba(0,0,0,.2);
+        }
+        ul{
+            padding:0;
+            margin:0;
+        }
+        li{
+            list-style-type: none;
+        }
+        img{
+            vertical-align: middle;
+        }
+        a{
+            text-decoration: none;
+        }
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .header-left {
+            float: left;
+
+            text-align:center;
+        }
+        .header-left ul{
+            float:left;
+        }
+        .header-left li{
+            float:left;
+            height:80px;
+            line-height:80px;
+            font-size:16px;
+            font-weight:600;
+            color:#333;
+            padding:0 18px;
+
+        }
+        .header-left li:first-child{
+            position:relative;
+        }
+        .header-left li:first-child::after{
+            content:"";
+            display:block;
+            position:absolute;
+            width:1px;
+            height:16px;
+            background:#333;
+            right:0;
+            top:50%;
+            transform: translateY(-50%);
+            opacity:.7;
+        }
+        .header-left li span{
+            padding-bottom:8px;
+            position:relative;
+        }
+        .header-left li span:hover{
+            cursor: pointer;
+            color:red;
+        }
+        .header-left li span:hover::after{
+            content:"";
+            display:block;
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:3px;
+            background:red;
+        }
+        .header-left i{
+            float:left;
+            display:block;
+            font-size:50px;
+            margin:0;
+            line-height:80px;
+            height:80px;
+            width:100px;
+            border-right:1px solid rgba(0,0,0,.2);
+
+        }
+        .header-right {
+            float: right;
+            margin-right:60px;
+        }
+        .header-right div{
+            float:left;
+            line-height:80px;
+            text-align:center;
+            height:80px;
+            padding:0 16px;
+        }
+        .header-right div a span{
+            vertical-align: middle;
+            font-size:14px;
+            color:#333;
+            margin-left:5px;
+            position:relative;
+        }
+        .header-right div a:hover,.right-search i,.header-left i{
+            cursor: pointer;
+        }
+        .header-right div a:hover span::after{
+            content:"";
+            display:block;
+            position:absolute;
+            left:0;
+            bottom:2px;
+            height:2px;
+            width:28px;
+            background:#333;
+        }
+        .header-right div img{
+            width:22px;
+            height:21px;
+        }
+        .header-right  .right-search{
+            border-left:1px solid rgba(0,0,0,.2);
+            border-right:1px solid rgba(0,0,0,.2);
+            padding:0 40px;
+        }
+        .right-search i{
+            font-size:22px;
+            font-weight:100;
+            color:#333;
+        }
+        @media screen and (max-width:768px){
+            .header-left ul{
+                display:none;
+            }
+            .right-login{
+                display:none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="clearfix">
+        <div class="header">
+            <div class="header-left clearfix">
+                <i class="iconfont">&#xe62b</i>
+                <ul class="clearfix">
+                    <li><span>男子</span></li>
+                    <li><span>女子</span></li>
+                </ul>
+            </div>
+            <div class="header-right">
+                <div class="right-login clearfix">
+                    <div>
+                        <a href="">
+                                <img src="public/images/icon-login.svg" alt="">
+                                <span>登录</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="">
+                                <img src="public/images/chinese.png" alt="">
+                                <span>中国</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="right-search">
+                    <i class="iconfont">&#xebde</i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main"></div>
+    <footer></footer>
+</body>
+
+</html>

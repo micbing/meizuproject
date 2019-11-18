@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户数据表</title>
+    <link rel="stylesheet" href="public/css/easyui.css">
+    <link rel="stylesheet" href="public/css/icon.css">
+</head>
+
+<body>
+    <table id="dg" title="用户数据表" class="easyui-datagrid" style="width:550px;height:250px" url="get_users.php"
+        toolbar="#toolbar" rownumbers="true" fitColumns="true" singleSelect="true">
+        <thead>
+            <tr>
+                <th field="firstname" width="50">用户名</th>
+                <th field="lastname" width="50">用户标记</th>
+                <th field="phone" width="50">创建日期</th>
+                <th field="email" width="50">最近修改日期</th>
+            </tr>
+        </thead>
+    </table>
+    <div id="toolbar">
+        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">添加用户</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">用户编辑</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">删除用户</a>
+    </div>
+    <script src='public/js/jquery.min.js'></script>
+    <script src='public/js/jquery.easyui.min.js'></script>
+</body>
+
+</html>

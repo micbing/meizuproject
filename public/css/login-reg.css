@@ -1,0 +1,42 @@
+html,body{
+    height:100%;
+    width:100%;
+}
+body{
+    margin:0;
+    background:url('../images/bg.jpg') no-repeat;
+}
+a{
+    text-decoration: none;
+    color:#333;
+}
+a:hover{
+    color:#ff502f;
+}
+.login-content{
+    position: relative;
+    height:100%;
+    width:100%;
+}
+.login-wrap{
+    position: absolute;
+    right:180px;
+    top:300px;
+}
+.to-reg,.to-login {
+    display: inline-block;
+    position: relative;
+    top: -40px;
+    left: 140px;
+}
+.to-login.to-login2{
+    top:-8px;
+}
+
+.login-button-nav {
+    margin-top: 0px;
+}
+
+.login-button-nav a {
+    margin: 0 20px;
+}

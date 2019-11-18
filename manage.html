@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理页</title>
+    <link rel="stylesheet" href="public/css/easyui.css">
+    <link rel="stylesheet" href="public/css/icon.css">
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        body .accordion{
+            border:none;
+            border-bottom:1px solid #95B8E7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="easyui-layout" style="width:1600px;height:700px;margin:80px auto">
+        <div data-options="region:'north'" style="height:50px"></div>
+        <div data-options="region:'south',split:true" style="height:50px;"></div>
+        <div data-options="region:'east',split:true" title="East" style="width:150px;"></div>
+        <div data-options="region:'west',split:true" title="管理列表" style="width:150px;">
+            <div id="sm" class="easyui-sidemenu" data-options="data:data" style="width:143px"></div>
+        </div>
+        <div data-options="region:'center',title:'管理数据',iconCls:'icon-ok'">
+            <table class="easyui-datagrid">
+                <tbody>
+                    <iframe name="iframeA" frameborder="0" height="98%" width="100%" scrolling="no"></iframe>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src='public/js/jquery.min.js'></script>
+    <script src='public/js/jquery.easyui.min.js'></script>
+    <script>
+        var data = [{
+                text: '用户管理',
+                iconCls: 'icon-sum',
+                state: 'open',
+                children: [{
+                    text: '新增用户'
+                }, {
+                    text: '删除用户'
+                }, {
+                    text: '修改用户数据',
+                }]
+            }, {
+                text: '商品管理',
+                iconCls: 'icon-more',
+                children: [{
+                    text: '新增商品'
+                }, {
+                    text: '删除商品'
+                }, {
+                    text: '修改商品参数'
+                }]
+            }];
+        $(function () {
+            var opt = $("#sm").sidemenu('options');
+            opt.onSelect = function (item) {
+                console.log(item);
+            }
+        })
+
+    </script>
+</body>
+
+</html>

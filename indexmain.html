@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="public/css/public.css">
+    <style>
+        h3 {
+            margin: 0;
+        }
+
+        .index-container {
+            margin-top: 400px;
+            min-width: 1240px;
+        }
+
+        .adv-center {
+            padding-bottom: 45px;
+        }
+
+        .list-adv {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .list-adv li {
+            float: left;
+            width: 25%;
+        }
+
+        .list-adv li a {
+            display: block;
+            text-align: center;
+        }
+
+        .list-adv li img {
+            height: 130px;
+        }
+
+        .list-adv li em {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            font-size: 20px;
+            font-style: normal;
+        }
+
+        .list-adv li p {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .phone-title,
+        .music-title {
+            padding: 50px 0 16px 0;
+            text-align: center;
+            background: #f4f4f4;
+        }
+
+        .phone-title h3,
+        .music-title h3 {
+            font-style: normal;
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        .phone-banner,
+        .music-banner {
+            height: 450px;
+        }
+
+        .phone-banner a,
+        .music-banner a {
+            position: relative;
+            height: 100%;
+            display: block;
+            width: 100%;
+        }
+
+        .phone-banner img,
+        .music-banner img {
+            position: absolute;
+            left: 50%;
+            height: 100%;
+            transform: translateX(-50%);
+        }
+
+        .phone-goods-list-nav>ul li,
+        .music-goods-list-nav>ul li {
+            float: left;
+            position: relative;
+            text-align: center;
+            width: 302px;
+            height: 375px;
+            transition: .3s;
+            background: #fff;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .music-goods-list-nav li:hover,.phone-goods-list-nav li:hover{
+            box-shadow: 0 15px 30px rgba(0,0,0,.1);
+        }
+        .phone-goods-list-nav>ul li.last,
+        .music-goods-list-nav>ul li.last {
+            margin-right: 0;
+        }
+
+        .phone-goods-list-nav>ul li.big {
+            width: 615px;
+            height: 610px;
+        }
+
+        .phone-goods-list-nav li a,
+        .music-goods-list-nav li a {
+            display: block;
+            height: 100%;
+        }
+
+        .section-nav-phone,
+        .section-nav-music {
+            width: 100%;
+            background: #f4f4f4;
+        }
+
+        .phone-goods-list-nav,
+        .music-goods-list-nav {
+            width: 1240px;
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+
+        .phone-goods-list-nav .big img {
+            height: 460px;
+        }
+
+        .phone-goods-list-nav img,
+        .music-goods-list-nav img {
+            height: 230px;
+        }
+
+        .phone-goods-list-nav li:not(.big) img {
+            margin-top: 30px;
+        }
+
+        .music-goods-list-nav img {
+            margin-top: 10px;
+        }
+
+        .phone-goods-list-nav .big.big2 {
+            margin-right: 0;
+        }
+
+        .box-info {
+            display: block;
+        }
+
+        .phone-goods-list-nav span,
+        .music-goods-list-nav span {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .phone-goods-list-nav li:not(.big) .box-info {
+            margin-top: 0;
+        }
+
+        .box-info span,
+        .music-info span {
+            display: block;
+        }
+
+        .box-info .goods-name {
+            padding: 3px 0;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .music-goods-list-nav .box-info .goods-name {
+            font-size: 16px;
+        }
+
+        .phone-goods-list-nav li:not(.big) .goods-name {
+            font-size: 18px;
+        }
+
+        .phone-goods-list-nav li:not(.big) .goods-desc {
+            font-size: 14px;
+        }
+
+        .box-info .goods-desc {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 6px;
+            padding: 3px 0;
+        }
+
+        .box-info .goods-price {
+            position: relative;
+            display: inline-block;
+            font-size: 22px;
+            color: #c00;
+            padding-left: 14px;
+        }
+
+        .box-info .goods-price i {
+            position: absolute;
+            font-size: 14px;
+            left: 0;
+            bottom: 2px;
+            font-style: normal;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="top">
+            <div class="logo-img">
+                <a href="">
+                    <svg fill="#00b4ff" version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="402.048px" height="73.556px" viewBox="17.318 5.824 402.048 73.556"
+                        enable-background="new 17.318 5.824 402.048 73.556">
+                        <path
+                            d="M321.513,5.824H256.91v12.878h51.478l-49.294,44.581c-8.227,7.023-2.872,16.096,3.958,16.096h65.337V66.472 h-52.117l48.964-44.554C333.52,14.473,328.535,5.824,321.513,5.824">
+                        </path>
+                        <rect x="226.517" y="5.824" width="14.426" height="73.556"></rect>
+                        <path
+                            d="M104.296,5.824h-71.36c-8.576,0-15.618,7.012-15.618,15.588v57.967H31.14V23.743 c0-2.711,2.208-5.041,4.92-5.041h25.31v60.677h14.428V18.702h25.312c2.712,0,4.919,2.329,4.919,5.041v55.636h13.86V21.416 C119.888,12.841,112.872,5.824,104.296,5.824">
+                        </path>
+                        <path
+                            d="M148.765,23.614c0-2.712,2.199-4.912,4.911-4.912h55.909V5.824h-58.236c-8.576,0-15.592,7.016-15.592,15.592 v42.37c0,8.576,7.017,15.592,15.592,15.592h58.236V66.5h-55.909c-2.711,0-4.911-2.199-4.911-4.912V49.042h58.43V36.117h-58.43 V23.614z">
+                        </path>
+                        <path
+                            d="M405.506,5.824v55.637c0,2.71-2.22,5.039-4.931,5.039h-39.77c-2.711,0-4.892-2.328-4.892-5.039V5.824h-13.86 v57.963c0,8.576,7.018,15.592,15.592,15.592h46.127c8.575,0,15.592-7.017,15.592-15.592V5.824H405.506z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <div class="top-right">
+                <input type="text" id="search" placeholder="魅族 16T">
+                <div class="user"><img src="public/images/user.png" alt="user"></div>
+                <div class="buy-car"><img src="public/images/gouwuche.png" alt=""></div>
+            </div>
+            <div class="top-center">
+                <ul class="list-tab clearfix">
+                    <li><a href="">手机</a>
+                        <div class="list-tab-wrap">
+                            <div class="list-tab-content  phone">
+                                <ul class="goods-list clearfix">
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/1.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/1.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/1.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/1.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/1.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/1.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/1.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/1.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="">声学
+                        </a>
+                        <div class="list-tab-wrap">
+                            <div class="list-tab-content  music">
+                                <ul class="goods-list clearfix">
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/2.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/2.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/2.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/2.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/2.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/2.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/2.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="public/images/2.png" alt="">
+                                                <p class="header-nav-name">魅族16T</p>
+                                                <p class="header-nav-price">￥1988</p>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li><a href="">生活</a></li>
+                    <li><a href="">配件</a></li>
+                    <li><a href="">生活</a></li>
+                    <li><a href="">Flyme</a></li>
+                    <li><a href="">服务</a></li>
+                    <li><a href="">专卖店</a></li>
+                    <li><a href="">社区</a></li>
+                    <li><a href="">App下载</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header-img">
+        <div class="banner-wrap">
+            <div class="banner"></div>
+        </div>
+
+    </div>
+    <div class="index-container">
+        <div class="adv-center">
+            <ul class="list-adv clearfix">
+                <li>
+                    <a href="#">
+                        <img src="public/images/adv1.png" alt="adv1">
+                        <em>魅族11.11 好物返场</em>
+                        <p>颜值狂欢购</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="public/images/adv1.png" alt="adv1">
+                        <em>魅族11.11 好物返场</em>
+                        <p>颜值狂欢购</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="public/images/adv1.png" alt="adv1">
+                        <em>魅族11.11 好物返场</em>
+                        <p>颜值狂欢购</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="public/images/adv1.png" alt="adv1">
+                        <em>魅族11.11 好物返场</em>
+                        <p>颜值狂欢购</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="goods-phone">
+            <div class="phone-title">
+                <h3>手机</h3>
+            </div>
+            <div class="phone-banner">
+                <a href="#">
+                    <img src="public/images/phonebanner.jpg" alt="">
+                </a>
+            </div>
+            <div class="section-nav-phone">
+                <div class="phone-goods-list-nav">
+                    <ul class="clearfix">
+                        <li class="big big1">
+                            <a href="#">
+                                <span class="goods-info"></span>
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 16T</span>
+                                    <span class="goods-desc">6.5英寸极边全面屏 | 骁龙855旗舰处理器</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        1999
+                                    </span>
+                                </span>
+                                <img src="public/images/phone-big1.png" alt="">
+                            </a>
+                        </li>
+                        <li class="big big2">
+                            <a href="#">
+                                <span class="goods-info"></span>
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 16T</span>
+                                    <span class="goods-desc">6.5英寸极边全面屏 | 骁龙855旗舰处理器</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        1999
+                                    </span>
+                                </span>
+                                <img src="public/images/phone-big1.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="goods-info"></span>
+                                <img src="public/images/phone-big1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 16T</span>
+                                    <span class="goods-desc">6.5英寸极边全面屏 | 骁龙855旗舰处理器</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        1999
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="goods-info"></span>
+                                <img src="public/images/phone-big1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 16T</span>
+                                    <span class="goods-desc">6.5英寸极边全面屏 | 骁龙855旗舰处理器</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        1999
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="goods-info"></span>
+                                <img src="public/images/phone-big1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 16T</span>
+                                    <span class="goods-desc">6.5英寸极边全面屏 | 骁龙855旗舰处理器</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        1999
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="last">
+                            <a href="#">
+                                <span class="goods-info"></span>
+                                <img src="public/images/phone-big1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 16T</span>
+                                    <span class="goods-desc">6.5英寸极边全面屏 | 骁龙855旗舰处理器</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        1999
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="goods-info"></span>
+                                <img src="public/images/phone-big1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 16T</span>
+                                    <span class="goods-desc">6.5英寸极边全面屏 | 骁龙855旗舰处理器</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        1999
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="goods-info"></span>
+                                <img src="public/images/phone-big1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 16T</span>
+                                    <span class="goods-desc">6.5英寸极边全面屏 | 骁龙855旗舰处理器</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        1999
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="goods-info"></span>
+                                <img src="public/images/phone-big1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 16T</span>
+                                    <span class="goods-desc">6.5英寸极边全面屏 | 骁龙855旗舰处理器</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        1999
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="last">
+                            <a href="#">
+                                <span class="goods-info"></span>
+                                <img src="public/images/phone-big1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 16T</span>
+                                    <span class="goods-desc">6.5英寸极边全面屏 | 骁龙855旗舰处理器</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        1999
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="goods-music">
+            <div class="music-title">
+                <h3>魅族声学</h3>
+            </div>
+            <div class="music-banner">
+                <a href="#">
+                    <img src="public/images/musicbanner.jpg" alt="">
+                </a>
+            </div>
+            <div class="section-nav-music">
+                <div class="music-goods-list-nav">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#">
+                                <span class="music-info"></span>
+                                <img src="public/images/music1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 POP2 真无线蓝牙耳机</span>
+                                    <span class="goods-desc">【限时3期免息】蓝牙5.0 超长续航</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        369
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="music-info"></span>
+                                <img src="public/images/music1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 POP2 真无线蓝牙耳机</span>
+                                    <span class="goods-desc">【限时3期免息】蓝牙5.0 超长续航</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        369
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="music-info"></span>
+                                <img src="public/images/music1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 POP2 真无线蓝牙耳机</span>
+                                    <span class="goods-desc">【限时3期免息】蓝牙5.0 超长续航</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        369
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="last">
+                            <a href="#">
+                                <span class="music-info"></span>
+                                <img src="public/images/music1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 POP2 真无线蓝牙耳机</span>
+                                    <span class="goods-desc">【限时3期免息】蓝牙5.0 超长续航</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        369
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="music-info"></span>
+                                <img src="public/images/music1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 POP2 真无线蓝牙耳机</span>
+                                    <span class="goods-desc">【限时3期免息】蓝牙5.0 超长续航</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        369
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="music-info"></span>
+                                <img src="public/images/music1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 POP2 真无线蓝牙耳机</span>
+                                    <span class="goods-desc">【限时3期免息】蓝牙5.0 超长续航</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        369
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="music-info"></span>
+                                <img src="public/images/music1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 POP2 真无线蓝牙耳机</span>
+                                    <span class="goods-desc">【限时3期免息】蓝牙5.0 超长续航</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        369
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="last">
+                            <a href="#">
+                                <span class="music-info"></span>
+                                <img src="public/images/music1.png" alt="">
+                                <span class="box-info">
+                                    <span class="goods-name">魅族 POP2 真无线蓝牙耳机</span>
+                                    <span class="goods-desc">【限时3期免息】蓝牙5.0 超长续航</span>
+                                    <span class="goods-price">
+                                        <i>￥</i>
+                                        369
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/public.js"> </script>
+</body>
+
+</html>
